@@ -3,7 +3,7 @@ from summa import summa
 from erotus import erotus
 from tulo import tulo
 
-logger("aloitetaan ohjelma")
+logger("aloitetaan ohjelma") # kommentti
 
 x = int(input("luku 1: "))
 y = int(input("luku 2: "))
