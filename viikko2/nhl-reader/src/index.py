@@ -7,18 +7,19 @@ def main():
     response = requests.get(url).json()
 
     players = []
+    nationality = "FIN"
 
     for player_dict in response:
         player = Player(player_dict)
-        players.append(player)
-    
-    nationality = "FIN"
+        if player.nationality == nationality:
+            players.append(player)
+
+    players.sort(key=lambda player:  player.goals + player.assists, reverse=True)
 
     print(f"Players from {nationality}:\n")
 
     for player in players:
-        if player.nationality == nationality:
-            print(player)
+        print(player)
 
 if __name__ == "__main__":
     main()
