@@ -12,6 +12,34 @@ Register With Valid Username And Password
     Submit Credentials
     Register Should Succeed
 
+Register Accepts Password With Numbers
+    Set Username  kalle3
+    Set Password  kalle123
+    Set Password Confirmation  kalle123
+    Submit Credentials
+    Register Should Succeed
+
+Register Accepts Password With Symbol And Letters
+    Set Username  kalle4
+    Set Password  kalle#abc
+    Set Password Confirmation  kalle#abc
+    Submit Credentials
+    Register Should Succeed
+
+Register Rejects Password With Only Lowercase Letters
+    Set Username  kalle5
+    Set Password  kallekalle
+    Set Password Confirmation  kallekalle
+    Submit Credentials
+    Register Should Fail With Message  Password must include non-letter characters
+
+Register Rejects Password With Only Uppercase And Lowercase Letters
+    Set Username  kalle6
+    Set Password  KalleKalle
+    Set Password Confirmation  KalleKalle
+    Submit Credentials
+    Register Should Fail With Message  Password must include non-letter characters
+
 Register With Too Short Username And Valid Password
     Set Username  ka
     Set Password  kalle123
@@ -32,6 +60,22 @@ Register With Username That Is Already In Use
     Set Password Confirmation  kalle123
     Submit Credentials
     Register Should Fail With Message  Username is already in use
+
+
+Passwords And Confirmation Must Match Success
+    Set Username  testmatch1
+    Set Password  matchpass123
+    Set Password Confirmation  matchpass123
+    Submit Credentials
+    Register Should Succeed
+    
+
+Passwords And Confirmation Must Match Failure
+    Set Username  testmatch2
+    Set Password  matchpass123
+    Set Password Confirmation  wrongpass123
+    Submit Credentials
+    Register Should Fail With Message  Password and confirmation do not match
 
 *** Keywords ***
 Register Should Succeed
