@@ -1,11 +1,13 @@
+from ostos import Ostos
 from tuote import Tuote
+
 
 class Ostoskori:
     def __init__(self):
         pass
 
     def tavaroita_korissa(self):
-        pass
+        return 0
 
     def hinta(self):
         return 0
