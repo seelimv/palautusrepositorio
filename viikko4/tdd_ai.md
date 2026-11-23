@@ -4,3 +4,4 @@ Agentin kirjoittamat testit lopulta olivat kohtuullisia ja laadultaan hyviä. Ag
 
 Mielestäni molemmat työnjaot olivat hyviä enkä tiedä kumpi oli parempi. Mielestäni tämä saattaa olla esimerkiksi tapauskohtaista. Joissakin tapauksessa testien selittäminen sanallisesti saattaa olla riittävä ja toimiva ratkaisu, kun taas toisissa tapauksissa tarkempi muotoilu halutaan erityisesti ilmaista testien avulla. Pohdin vähentävätkö käsin kirjoitetut testit esimerkiksi palkkion huijaamisen (reward hacking) riskiä, jos agentin ei edes anneta muuttaa testitiedostoa.
 
+
