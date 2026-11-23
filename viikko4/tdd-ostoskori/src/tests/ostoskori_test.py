@@ -59,3 +59,11 @@ class TestOstoskori(unittest.TestCase):
         self.kori.lisaa_tuote(maito)
 
         self.assertEqual(self.kori.hinta(), maito.hinta() * 2)
+
+    def test_yhden_tuotteen_lisaaminsen_jalkeen_ostoskori_sisaltaa_ostoksen_jolla_sama_nimi_kuin_tuottella_ja_lkm_yksi(self):
+        maito = Tuote("Maito", 3)
+        self.kori.lisaa_tuote(maito)
+
+        ostos = self.kori.ostokset()[0]
+        self.assertEqual(ostos.tuotteen_nimi(), maito.nimi())
+        self.assertEqual(ostos.lukumaara(), 1)
